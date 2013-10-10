@@ -36,14 +36,14 @@ font-weight: bold:
 <br/><br/>
 
 
-<form action="login" method="get" onsubmit="return validateLogin()">
+<form action="Login" method="get" onsubmit="return validateLogin()">
 	<table id="login_table">
 		<tr>
 			<td colspan=2><h3>Sign In</h3></td>
 		</tr>
 		<tr>
 			<td>Email:</td>
-			<td><input type="text" name="client_id" id="client_id" required/></td>
+			<td><input type="text" name="email" id="email" required/></td>
 		</tr>
 		<tr>
 			<td>Password:</td>

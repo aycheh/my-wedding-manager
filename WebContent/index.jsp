@@ -7,18 +7,61 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="/style.css" rel="stylesheet" type="text/css">
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script> 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <title>Wedding manager</title>
 <h2 align="center">Welcome To Wedding Manager</h2><br>
 
 
 <div align="Right"> 
-<a href="LogIng.jsp" >Loging</a>
+<form action="LogIng.jsp">
+    <input type="submit" value="Loging">   
+</form>
+<button onclick="location.href='Sign_up.jsp'"> Signup	</button>
 </div>
-</head>
 
+<button onclick="location.href='LogIng.jsp'">
+     כניסה למערכת	</button>
+     
+</head>
+<p>
+<h2>Why Use Wedding Manager program? </h2>
 
 <body background="images/bg1.jpg">
+
+<div>
+<table border="0">
+<tr>
+<td><p>The average Israely / Ethiopian wedding costs a lot 
+		and takes a long time to plan. 
+       Planning a wedding can be one of the most joyful events in life, but also can be among the most stressful.
+       There is so much to do and remember, but little time to get it all done.</p>
+<p>    When planning a wedding, the bride, groom and their families must take many variables into account 
+       including who to invite, how much to spend and where everything will take place. 
+       However, compared to the big picture, these are the easy questions. 
+       After those decisions are made, couples need to track RSVPs, gifts,
+       accommodations, thank you notes, lists of tasks and payments.</p>
+
+<p>    Wedding software takes all variables into account and consolidates them into one easy-to-use program.
+
+       One thing couples might keep in mind when choosing wedding planning software is how easy it is to use and how updated its interface is.
+       This program comes to allow you very easy way to use and very user friendly.
+       We will add some necessary features and updates in the future.
+      
+       <h3>Using this program allow you:</h3>    
+       <ol>
+		<li>List of invited.</li>
+		<li>Accepted or declined invitation list.</li>
+		<li>Guests gave you money? Arrange it as incoming(money).</li>
+		</ol>
+
+       <p>Thank you for using this program.</p> 
+</p></td>
+<td><img src="images/wedding_flowers_background.jpg" name="home_img" border="0" id="home_img" style="height: 367px; width: 500px; "/></td>
+</tr>
+</table>
+
+<button onclick="location.href='Sign_up.jsp'"> Signup	</button>
+</div>
 
 </body>
 </html>

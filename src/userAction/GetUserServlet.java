@@ -2,7 +2,6 @@ package userAction;
 
 import java.io.IOException;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,40 +14,35 @@ import system.User;
 import system.UserAction;
 
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class GetUserServlet
  */
-@WebServlet("/Login")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/GetUser")
+public class GetUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	MyWeddingManager mw = MyWeddingManager.getInstance();
-       
-  
-    public LoginServlet() {
+	MyWeddingManager mw = MyWeddingManager.getInstance();  
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public GetUserServlet() {
         super();
         // TODO Auto-generated constructor stub
-        System.out.println("------ LoginServlet");
-        
     }
-
     
-    public static final String USER_EMAIL_PARAM = "email";
-    public static final String USER_PASSWORD_PARAM = "password";
+    //public static final String USER_EMAIL_PARAM = "email";
+    //public static final String USER_PASSWORD_PARAM = "password";
     public static final String ERROR_MWSSAGE = "errorMessage";
     public static final String USER_PARAM = "user";
     public static final String USER_NAME_PARAM = "userName";
-    public static final String USER1_NAME_PARAM = "שםמשתש";
-    public static final String USER_ID_NAME_PARAM = "user_id";
+   // public static final String USER1_NAME_PARAM = "שםמשתש";
     
     
     
    
     public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException , IOException{
-    
-    	String email = (String)request.getParameter(USER_EMAIL_PARAM);
-    	String password = (String)request.getParameter(USER_PASSWORD_PARAM);
-    	System.out.println( email  +   password );
+    	HttpSession session = request.getSession(false);
+
     	
-    	if ( password == null || password.trim().isEmpty() || email == null || email.trim().isEmpty() ||mw.login(email, password) == null ){
+    	if (session.getAttribute("user") == null){
  
         		request.setAttribute(ERROR_MWSSAGE, "Invalid email/password combination, try again");
         
@@ -57,42 +51,25 @@ public class LoginServlet extends HttpServlet {
         	}
     	
     	
-    	User ur = new User(email);
+    	User ur = new User((String)(session.getAttribute(USER_PARAM)));
     	UserAction uac = new UserAction(ur);
     	ur = uac.getUser(ur.getEmail());
     	User user = new User(ur.getId(), ur.getFirstName(), ur.getLastName(), ur.getPassword(), ur.getEmail());
     	
     	
-    	
-    	
-    	HttpSession session =  request.getSession(true);
-    	if (!session.isNew()){
-    		session.invalidate();
-    		session = request.getSession(true);
-    	}
-    	
+
     	
     	session.setAttribute("welcaomeMsg" ,"Wellcome");
-    	//session.setAttribute("welcaomeMsg" ,"ברוך-הבא");
     	session.setAttribute(USER_PARAM,user);
     	session.setAttribute(USER_NAME_PARAM ,user.getFirstName());
-    	session.setAttribute(USER_ID_NAME_PARAM ,user.getId());
-    	session.setAttribute(USER_EMAIL_PARAM ,user.getEmail());
+
     	
-    	System.out.println("the user is " + user);
+    	System.out.println("the user is --------------> " + user);
     	
 	
     	this.getServletConfig().getServletContext().getRequestDispatcher("/Dashboard.jsp").forward(request, response);
     	return;
     	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    }
-	
 
+    }
 }

@@ -41,6 +41,7 @@ public class GetAllReceivedPaymentServlet extends HttpServlet {
     public static final String USER_NAME_PARAM = "userName";
     public static final String RP_PARAM = "ReceivedPayment";
     
+    
   
    
     public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException , IOException{
@@ -57,7 +58,11 @@ public class GetAllReceivedPaymentServlet extends HttpServlet {
         	}
     	
     	
-    	User ur = new User((String)(session.getAttribute(USER_EMAIL_PARAM)));
+//    	User ur = new User((String)(session.getAttribute(USER_EMAIL_PARAM)));
+//    	UserAction uac = new UserAction(ur);
+//    	ur = uac.getUser(ur.getEmail());
+    	
+   	    User ur = new User((String)(session.getAttribute(USER_EMAIL_PARAM)));
     	UserAction uac = new UserAction(ur);
     	ur = uac.getUser(ur.getEmail());
     	User user = new User(ur.getId(), ur.getFirstName(), ur.getLastName(), ur.getPassword(), ur.getEmail());

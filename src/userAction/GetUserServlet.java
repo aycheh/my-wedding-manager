@@ -40,11 +40,11 @@ public class GetUserServlet extends HttpServlet {
    
     public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException , IOException{
     	HttpSession session = request.getSession(false);
-
-    	
+    	System.out.println("the user USER_PARAM  is --------------> " + USER_PARAM);
+    	System.out.println("the user USER_PARAM  is --------------> " );
     	if (session.getAttribute("user") == null){
  
-        		request.setAttribute(ERROR_MWSSAGE, "Invalid email/password combination, try again");
+        		request.setAttribute(ERROR_MWSSAGE, "You must login first");
         
        		this.getServletConfig().getServletContext().getRequestDispatcher("/LogIng.jsp").forward(request, response);
         	return;	
@@ -52,6 +52,7 @@ public class GetUserServlet extends HttpServlet {
     	
     	
     	User ur = new User((String)(session.getAttribute(USER_PARAM)));
+    	System.out.println("the user USER_PARAM  is ----11111----------> " + USER_PARAM);
     	UserAction uac = new UserAction(ur);
     	ur = uac.getUser(ur.getEmail());
     	User user = new User(ur.getId(), ur.getFirstName(), ur.getLastName(), ur.getPassword(), ur.getEmail());
@@ -64,7 +65,7 @@ public class GetUserServlet extends HttpServlet {
     	session.setAttribute(USER_NAME_PARAM ,user.getFirstName());
 
     	
-    	System.out.println("the user is --------------> " + user);
+    	//System.out.println("the user is --------------> " + user);
     	
 	
     	this.getServletConfig().getServletContext().getRequestDispatcher("/Dashboard.jsp").forward(request, response);

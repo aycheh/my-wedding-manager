@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -66,7 +67,44 @@
  </table>
 
 </div>
+
+
 {ReceivedPayment}
+<div>
+<table border="1">
+    <tr>
+        <th colspan="10" style="background-color:#7c2f97;">Expenses</th>
+    </tr>
+    <tr style="background-color:#f0a64e;">
+    	<th class="border">id</th>
+        <th class="border">user id</th>
+        <th class="border">person id</th>
+        <th class="border">received payment</th>
+        <th class="border">payback payment</th>
+        <th class="border">payment type</th>
+        <th class="border">event Type</th>
+        <th class="border">payback payment eventType</th>
+        <th class="border">event Address</th>
+        <th class="border">date</th>
+        
+    </tr>
+    <c:forEach var="ReceivedPayment" items="${ReceivedPayment}">
+    <tr>
+<td>${ReceivedPayment.id}</td>   
+<td>${ReceivedPayment.user_id}</td>
+<td>${ReceivedPayment.person_id}</td>
+<td>${ReceivedPayment.received_payment}</td>
+<td>${ReceivedPayment.payback_payment}</td>
+<td>${ReceivedPayment.payment_type}</td>
+<td>${ReceivedPayment.eventType}</td>
+<td>${ReceivedPayment.payback_payment_eventType}</td>
+<td>${ReceivedPayment.eventAddress}</td>
+<td>${ReceivedPayment.date}</td>
+</tr>
+ </c:forEach>
+</table> 
+</div>
+
 
 </body>
 </html>

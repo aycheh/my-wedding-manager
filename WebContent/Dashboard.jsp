@@ -67,7 +67,7 @@ font-weight: bold:
      	
      	
      	
-     	<form action="/GetAllReceivedPayment" method="get">
+     	<form action="GetAllReceivedPayment" method="get">
      	<th><input class="white_button" name="commit" type="submit" value=" getAllReceivedPayment" /></th>
      </form>
      

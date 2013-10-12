@@ -4,8 +4,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script> 
 <h3>${Msg}</h3>
 <!--h1 align="Right">  ${שםמשתש} ${welcaomeMsg}  </h1-->
+
+<script>
+function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+}
+</script>
 
 <div align="Right"> 
 	         <form action="Logout" method="get">
@@ -21,7 +33,7 @@
 <body background="images/bg1.jpg">
 
 <div>
-<table border="1">
+<table border="0">
      
  <tr>
      <tr>
@@ -66,6 +78,94 @@
  </table>
 
 </div>
+
+
+<form action="CreatePersonAndCreateReceivedPayment" method="get" onsubmit="return validateLogin()">
+	<table id="CreatePersonAndCreateReceivedPayment">
+		<tr>
+			<td colspan=2><h4>please fill the following details </h4></td>
+		</tr>
+		<tr>
+			<td>Person Name:</td>
+			<td><input type="text" name="personName" id="personName" required/></td>
+		</tr>
+				<tr>
+			<td>Person LastName:</td>
+			<td><input type="text" name="personLastName" id="personLastName" required/></td>
+		</tr>
+				<tr>
+			<td>Relationship:</td>
+			<td><input type="text" name="relationship" id="relationship" required/></td>
+		</tr>
+				
+		<tr>
+			<td>Pesron Address:</td>
+			<td><input type="text" name="pesronAddress" id="pesronAddress"/></td>
+		</tr>
+		<tr>
+		<tr>
+			<td>Person Phone:</td>
+			<td><input type="text" name="personPhone" id="personPhone"/></td>
+		</tr>
+				<tr>
+			<td>Person Email:</td>
+			<td><input type="text" name="personEmail" id="personEmail" /></td>
+		</tr>
+				<tr>
+			<td>Comment About a person:</td>
+			<td><input type="text" name="pesronComment" id="pesronComment" /></td>
+		</tr>
+				<tr>
+			<td>Received Payment:(Insert number 0-1999999)</td>
+			<td><input type="text" name="received_payment" id="received_payment" required onkeypress="return isNumber(event)"/></td>
+		</tr>
+				<tr>
+			<td>Payback Payment:(Insert number 0-1999999)</td>
+			<td><input type="text" name="payback_payment" id="payback_payment" required onkeypress="return isNumber(event)"/></td>
+		</tr>
+				<tr>
+			<td>Payment Type (check/cash):</td>
+			<td><input type="text" name="payment_type" id="payment_type"/></td>
+		</tr>
+				<tr>
+			<td>Event Type:</td>
+			<td><input type="text" name="eventType" id="eventType" required/></td>
+		</tr>
+				<tr>
+			<td>Payback Payment Event Type:</td>
+			<td><input type="text" name="payback_payment_eventType" id="payback_payment_eventType" /></td>
+		</tr>
+				<tr>
+			<td>Event Address:</td>
+			<td><input type="text" name="eventAddress" id="eventAddress" /></td>
+		</tr>
+				<tr>
+			<td>Paye Comment (About the expenses):</td>
+			<td><input type="text" name="payeComment" id="payeComment" /></td>
+		</tr>
+		
+		
+
+		<tr>
+			<td colspan=2>
+				<input name="submit" id="submit" type="submit" value=" submit"/>				
+			</td>
+		</tr>
+		
+	</table>
+	
+</form>
+		<form action=index.jsp method="get">
+		<table>
+		<tr>
+			<td colspan=2>
+				<input type="submit" name="submitted" value="cancel">				
+			</td>
+		</tr>
+		</table>
+	</form>
+	<div class="errMsg">${errorMessage}</div>
+	
 
 
 </body>

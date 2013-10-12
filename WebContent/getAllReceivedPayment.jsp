@@ -68,16 +68,16 @@
 
 </div>
 
-
-{ReceivedPayment}
 <div>
 <table border="1">
     <tr>
-        <th colspan="10" style="background-color:#7c2f97;">Expenses</th>
+        <th colspan="12" style="background-color:#7c2f97;">Expenses</th>
     </tr>
     <tr style="background-color:#f0a64e;">
     	<th class="border">id</th>
         <th class="border">user id</th>
+        <th class="border">Person Name</th>
+        <th class="border">Person Last Name</th>
         <th class="border">person id</th>
         <th class="border">received payment</th>
         <th class="border">payback payment</th>
@@ -92,6 +92,8 @@
     <tr>
 <td>${ReceivedPayment.id}</td>   
 <td>${ReceivedPayment.user_id}</td>
+<td>${ReceivedPayment.person_firstName}</td>
+<td>${ReceivedPayment.person_lastName}</td>
 <td>${ReceivedPayment.person_id}</td>
 <td>${ReceivedPayment.received_payment}</td>
 <td>${ReceivedPayment.payback_payment}</td>

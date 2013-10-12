@@ -123,8 +123,8 @@ public class CreatePersonAndCreateReceivedPaymentServlet extends HttpServlet {
 
     	
     	Person pr = new Person(0, personName, personLastName, relationship, pesronAddress, personPhone, personEmail, pesronComment, ur.getId());
-    	Expenses exp = new Expenses(0, ur.getId(), pr.getId(), received_payment, payback_payment, payment_type, eventType, payback_payment_eventType, eventAddress, payeComment, sqlDate);
-
+    	Expenses exp = new Expenses(0, ur.getId(), pr.getFirstName(), pr.getLastName(), pr.getId(), received_payment, payback_payment, payment_type, eventType, payback_payment_eventType, eventAddress, payeComment, sqlDate);
+    	
  
     	TotalExpenses toxp = new TotalExpenses(exp.getUser_id());
     	try {

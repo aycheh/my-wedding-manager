@@ -4,17 +4,32 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script> 
 <h3>${Msg}</h3>
 <!--h1 align="Right">  ${שםמשתש} ${welcaomeMsg}  </h1-->
 
 <div align="Right"> 
 	         <form action="Logout" method="get">
      			  <p style="clear:both">
-                  <input class="white_button" name="commit" type="submit" value="Logout" />             
-                  <div class="errMsg">${errorMessage}
-                  
-                  </div>
-             </form>
+                  <input class="white_button" name="commit" type="submit" value="Logout" />  
+ </form> 
+                                            
+<style>
+.errMsg{
+color:#FF0000;
+font-weight: bold:
+
+}
+#login_table{
+	border-spacing:20px;
+	border:1px outset blue;
+	border-radius:10px;
+	box-shadow:2px 2px 4px darkgray;
+}
+</style>
+
+
+             
 </div>
 <title>Updateuser</title>
 </head>
@@ -64,8 +79,58 @@
      	</form>
      </tr>     
  </table>
-
 </div>
+
+
+<form action="Updateuser" method="get" onsubmit="return validateLogin()">
+	<table id="Updateuser">
+		<tr>
+			<td colspan=2><h4>please fill your details </h4></td>
+		</tr>
+		<tr>
+			<td>FirstName:</td>
+			<td><input type="text" name="FirstName" id="FirstName" required/></td>
+		</tr>
+				<tr>
+			<td>LastName:</td>
+			<td><input type="text" name="LastName" id="LastName" required/></td>
+		</tr>
+				<tr>
+			<td>Password:</td>
+			<td><input type="password" name="password" id="password" required/></td>
+		</tr>
+				
+		<tr>
+			<td>Re-enter Password:</td>
+			<td><input type="password" name="Re_enterPassword" id="Re_enterPassword" required/></td>
+		</tr>
+		<tr>
+		<tr>
+			<td>Email:</td>
+			<td><input type="text" name="email2" id="email2" required/></td>
+		</tr>
+				
+		<tr>
+			<td colspan=2>
+				<input name="submit" id="submit" type="submit" value=" submit"/>				
+			</td>
+		</tr>
+		
+	</table>
+	
+</form>
+		<form action=index.jsp method="get">
+		<table>
+		<tr>
+			<td colspan=2>
+				<input type="submit" name="submitted" value="cancel">				
+			</td>
+		</tr>
+		</table>
+	</form>
+	<div class="errMsg">${errorMessage}</div>
+	
+	
 
 
 </body>

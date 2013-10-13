@@ -42,6 +42,7 @@ public class GetUserServlet extends HttpServlet {
     	HttpSession session = request.getSession(false);
     	System.out.println("the user USER_PARAM  is --------------> " + USER_PARAM);
     	System.out.println("the user USER_PARAM  is --------------> " );
+    	
     	if (session.getAttribute("user") == null){
  
         		request.setAttribute(ERROR_MWSSAGE, "You must login first");
@@ -73,4 +74,5 @@ public class GetUserServlet extends HttpServlet {
     	
 
     }
+    
 }

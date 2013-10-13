@@ -61,6 +61,8 @@ public class LoginServlet extends HttpServlet {
     	UserAction uac = new UserAction(ur);
     	ur = uac.getUser(ur.getEmail());
     	User user = new User(ur.getId(), ur.getFirstName(), ur.getLastName(), ur.getPassword(), ur.getEmail());
+    	//System.out.println("from login ======> " +user);
+    	//System.out.println("from login ===user.getEmail()===>  "+ user.getEmail());
     	
     	
     	
@@ -79,7 +81,7 @@ public class LoginServlet extends HttpServlet {
     	session.setAttribute(USER_ID_NAME_PARAM ,user.getId());
     	session.setAttribute(USER_EMAIL_PARAM ,user.getEmail());
     	
-    	System.out.println("the user is " + user);
+    	System.out.println(" from login ======> the user is " + user);
     	
 	
     	this.getServletConfig().getServletContext().getRequestDispatcher("/Dashboard.jsp").forward(request, response);

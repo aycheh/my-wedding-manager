@@ -87,22 +87,14 @@ font-weight: bold:
 		<tr>
 			<td colspan=2><h4>please fill your details </h4></td>
 		</tr>
-		<tr>
-			<td>FirstName:</td>
-			<td><input type="text" name="FirstName" id="FirstName" required/></td>
-		</tr>
 				<tr>
-			<td>LastName:</td>
-			<td><input type="text" name="LastName" id="LastName" required/></td>
-		</tr>
-				<tr>
-			<td>Password:</td>
-			<td><input type="password" name="password" id="password" required/></td>
+			<td>Old_password:</td>
+			<td><input type="password" name="old_password" id="old_password" required/></td>
 		</tr>
 				
 		<tr>
-			<td>Re-enter Password:</td>
-			<td><input type="password" name="Re_enterPassword" id="Re_enterPassword" required/></td>
+			<td>New password:</td>
+			<td><input type="password" name="password" id="password" required/></td>
 		</tr>
 		<tr>
 		<tr>

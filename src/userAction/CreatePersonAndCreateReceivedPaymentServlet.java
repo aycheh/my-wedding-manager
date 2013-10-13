@@ -78,7 +78,8 @@ public class CreatePersonAndCreateReceivedPaymentServlet extends HttpServlet {
 //    	String email = (String)request.getParameter(USER_EMAIL_PARAM);
     	//----------------------------------------------------------------------
     	/**person params**/
-    	String personName = (String)request.getParameter(PERSON_NAME_PARAM);
+    	String personFirstName = (String)request.getParameter(PERSON_NAME_PARAM);
+    	System.out.println("PERSON_NAME_PARAM ggggggggggggggggggggggg>>>    :" + personFirstName);
     	String personLastName = (String)request.getParameter(PERSON_LAST_NAME_PARAM);
     	String relationship = (String)request.getParameter(PERSON_RELATIONSHIP_PARAM);
     	String pesronAddress = (String)request.getParameter(PERSON_ADDRESS_PARAM);
@@ -118,15 +119,17 @@ public class CreatePersonAndCreateReceivedPaymentServlet extends HttpServlet {
     	 java.sql.Date sqlDate = new Date(ts);
    		 
     	 User ur = new User((String)(session.getAttribute(USER_EMAIL_PARAM)));
+    	 
      	UserAction uac = new UserAction(ur);
      	ur = uac.getUser(ur.getEmail());
-
+     	//System.out.println("User ur = new User =====333333=========" +ur);
     	
-    	Person pr = new Person(0, personName, personLastName, relationship, pesronAddress, personPhone, personEmail, pesronComment, ur.getId());
-    	Expenses exp = new Expenses(0, ur.getId(), pr.getFirstName(), pr.getLastName(), pr.getId(), received_payment, payback_payment, payment_type, eventType, payback_payment_eventType, eventAddress, payeComment, sqlDate);
-    	
+    	Person pr = new Person(0, personFirstName, personLastName, relationship, pesronAddress, personPhone, personEmail, pesronComment, ur.getId());
+    	System.out.println("firts name )))))))))))))))))) -- " +  pr.getFirstName());
+    	Expenses exp = new Expenses(0, ur.getId(),  pr.getFirstName(),pr.getLastName(), pr.getId(), received_payment, payback_payment, payment_type, eventType, payback_payment_eventType, eventAddress, payeComment, sqlDate);
+    	System.out.println("exp >>>>>>>>>>>>>>>>>" + exp);
  
-    	TotalExpenses toxp = new TotalExpenses(exp.getUser_id());
+    	TotalExpenses toxp = new TotalExpenses(ur.getId());
     	try {
 			uac.CreatePersonAndCreateReceivedPayment(exp, pr, toxp);
 		} catch (Exception e) {

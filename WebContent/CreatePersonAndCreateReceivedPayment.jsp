@@ -86,7 +86,7 @@ function isNumber(evt) {
 			<td colspan=2><h4>please fill the following details </h4></td>
 		</tr>
 		<tr>
-			<td>Person Name:</td>
+			<td>Person First Name:</td>
 			<td><input type="text" name="personName" id="personName" required/></td>
 		</tr>
 				<tr>

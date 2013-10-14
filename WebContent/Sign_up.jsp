@@ -70,7 +70,7 @@ font-weight: bold:
 		</table>
 	</form>
 	<div class="errMsg">${errorMessage}</div>
-	
+	<button onclick="location.href='index.jsp'"> Home</button>
 
 
 

@@ -40,7 +40,7 @@ font-weight: bold:
      
  <tr>
      <tr>
-     <form action="getUser.jsp" method="get">
+     <form action="GetUser" method="get">
      	<th><input class="white_button" name="commit" type="submit" value="getUser" /></th>
      	</form>
      	
@@ -71,8 +71,8 @@ font-weight: bold:
      	<th><input class="white_button" name="commit" type="submit" value=" getAllReceivedPayment" /></th>
      </form>
      
-     <form action="---------" method="get">
-     	<th><input class="white_button" name="commit" type="submit" value=" --------" /></th>
+     <form action="Dashboard.jsp" method="get">
+     	<th><input class="white_button" name="commit" type="submit" value=" Dashboard" /></th>
      </form>
      <form action="----------" method="get">
      	<th><input class="white_button" name="commit" type="submit" value=" -------" /></th>

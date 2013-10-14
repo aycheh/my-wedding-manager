@@ -25,7 +25,7 @@
      
  <tr>
      <tr>
-     <form action="/GetUser" method="get">
+     <form action="GetUser" method="get">
      	<th><input class="white_button" name="commit" type="submit" value="getUser" /></th>
      	</form>
      	
@@ -52,12 +52,12 @@
      	
      	
      	
-     	<form action="/GetAllReceivedPayment" method="get">
+     	<form action="GetAllReceivedPayment" method="get">
      	<th><input class="white_button" name="commit" type="submit" value=" getAllReceivedPayment" /></th>
      </form>
      
-     <form action="---------" method="get">
-     	<th><input class="white_button" name="commit" type="submit" value=" --------" /></th>
+     <form action="Dashboard.jsp" method="get">
+     	<th><input class="white_button" name="commit" type="submit" value=" Dashboard" /></th>
      </form>
      <form action="----------" method="get">
      	<th><input class="white_button" name="commit" type="submit" value=" -------" /></th>

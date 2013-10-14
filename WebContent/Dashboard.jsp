@@ -40,7 +40,7 @@ font-weight: bold:
      
  <tr>
      <tr>
-     <form action="getUser.jsp" method="get">
+     <form action="GetUser" method="get">
      	<th><input class="white_button" name="commit" type="submit" value="getUser" /></th>
      	</form>
      	

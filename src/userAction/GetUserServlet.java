@@ -28,8 +28,7 @@ public class GetUserServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
     
-    //public static final String USER_EMAIL_PARAM = "email";
-    //public static final String USER_PASSWORD_PARAM = "password";
+    public static final String USER_EMAIL_PARAM = "email";
     public static final String ERROR_MWSSAGE = "errorMessage";
     public static final String USER_PARAM = "user";
     public static final String USER_NAME_PARAM = "userName";
@@ -40,8 +39,9 @@ public class GetUserServlet extends HttpServlet {
    
     public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException , IOException{
     	HttpSession session = request.getSession(false);
-    	System.out.println("the user USER_PARAM  is --------------> " + USER_PARAM);
-    	System.out.println("the user USER_PARAM  is --------------> " );
+    	
+    	
+    	String email = (String)(session.getAttribute("email"));
     	
     	if (session.getAttribute("user") == null){
  
@@ -52,7 +52,8 @@ public class GetUserServlet extends HttpServlet {
         	}
     	
     	
-    	User ur = new User((String)(session.getAttribute(USER_PARAM)));
+    
+    	User ur = new User(email);
     	System.out.println("the user USER_PARAM  is ----11111----------> " + USER_PARAM);
     	UserAction uac = new UserAction(ur);
     	ur = uac.getUser(ur.getEmail());
@@ -66,10 +67,10 @@ public class GetUserServlet extends HttpServlet {
     	session.setAttribute(USER_NAME_PARAM ,user.getFirstName());
 
     	
-    	//System.out.println("the user is --------------> " + user);
+    	
     	
 	
-    	this.getServletConfig().getServletContext().getRequestDispatcher("/Dashboard.jsp").forward(request, response);
+    	this.getServletConfig().getServletContext().getRequestDispatcher("/getUser.jsp").forward(request, response);
     	return;
     	
 

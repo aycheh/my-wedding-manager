@@ -52,11 +52,15 @@ font-weight: bold:
 		<tr>
 			<td colspan=2>
 				<input name="submit" id="submit" type="submit" value=" Login"/>
-			</td>
+			</td>			
 		</tr>
+		
 	</table>
 </form>
+
 <div class="errMsg">${errorMessage}</div>
+<button onclick="location.href='Sign_up.jsp'"> Signup</button>
+<button onclick="location.href='index.jsp'"> Home</button>
 
 </body>
 </html>

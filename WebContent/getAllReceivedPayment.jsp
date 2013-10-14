@@ -26,7 +26,7 @@
      
  <tr>
      <tr>
-     <form action="getUser.jsp" method="get">
+     <form action="GetUser" method="get">
      	<th><input class="white_button" name="commit" type="submit" value="getUser" /></th>
      	</form>
      	
@@ -57,8 +57,8 @@
      	<th><input class="white_button" name="commit" type="submit" value=" getAllReceivedPayment" /></th>
      </form>
      
-     <form action="---------" method="get">
-     	<th><input class="white_button" name="commit" type="submit" value=" --------" /></th>
+     <form action="Dashboard.jsp" method="get">
+     	<th><input class="white_button" name="commit" type="submit" value=" Dashboard" /></th>
      </form>
      <form action="----------" method="get">
      	<th><input class="white_button" name="commit" type="submit" value=" -------" /></th>
@@ -74,31 +74,32 @@
         <th colspan="12" style="background-color:#7c2f97;">Expenses</th>
     </tr>
     <tr style="background-color:#f0a64e;">
-    	<th class="border">id</th>
-        <th class="border">user id</th>
+    	<!--  <th class="border">id</th>-->
+        <!--  <th class="border">user id</th> -->
         <th class="border">Person Name</th>
         <th class="border">Person Last Name</th>
-        <th class="border">person id</th>
+        <!-- <th class="border">person id</th> -->
         <th class="border">received payment</th>
-        <th class="border">payback payment</th>
-        <th class="border">payment type</th>
         <th class="border">event Type</th>
+        <th class="border">payment type</th>
+        <th class="border">payback payment</th>
         <th class="border">payback payment eventType</th>
-        <th class="border">event Address</th>
-        <th class="border">date</th>
+        <th class="border">payback payment event Address</th>
+        <th class="border">payback payment date</th>
         
     </tr>
     <c:forEach var="ReceivedPayment" items="${ReceivedPayment}">
     <tr>
-<td>${ReceivedPayment.id}</td>   
-<td>${ReceivedPayment.user_id}</td>
+<!-- <td>${ReceivedPayment.id}</td> -->
+<!--<td>${ReceivedPayment.user_id}</td>  --> 
+
 <td>${ReceivedPayment.person_firstName}</td>
 <td>${ReceivedPayment.person_lastName}</td>
-<td>${ReceivedPayment.person_id}</td>
+<!--  <td>${ReceivedPayment.person_id}</td>-->
 <td>${ReceivedPayment.received_payment}</td>
-<td>${ReceivedPayment.payback_payment}</td>
-<td>${ReceivedPayment.payment_type}</td>
 <td>${ReceivedPayment.eventType}</td>
+<td>${ReceivedPayment.payment_type}</td>
+<td>${ReceivedPayment.payback_payment}</td>
 <td>${ReceivedPayment.payback_payment_eventType}</td>
 <td>${ReceivedPayment.eventAddress}</td>
 <td>${ReceivedPayment.date}</td>

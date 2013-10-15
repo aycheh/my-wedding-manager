@@ -47,8 +47,8 @@
      	<th><input class="white_button" name="commit" type="submit" value=" CreatePersonAndCreateReceivedPayment" /></th>
      	</form>
      	
-     	<form action="updateReceivedPayment.jsp" method="get">
-     	<th><input class="white_button" name="commit" type="submit" value=" updateReceivedPayment" /></th>
+     	<form action="Update_Person_And_ReceivedPayment.jsp" method="get">
+     	<th><input class="white_button" name="commit" type="submit" value=" Update Person And ReceivedPayment" /></th>
      	</form>
      	
      	
@@ -74,11 +74,11 @@
         <th colspan="12" style="background-color:#7c2f97;">Expenses</th>
     </tr>
     <tr style="background-color:#f0a64e;">
-    	<!--  <th class="border">id</th>-->
-        <!--  <th class="border">user id</th> -->
+    	 <th class="border">id</th>
+         <th class="border">user id</th>
         <th class="border">Person Name</th>
         <th class="border">Person Last Name</th>
-        <!-- <th class="border">person id</th> -->
+        <th class="border">person id</th>
         <th class="border">received payment</th>
         <th class="border">event Type</th>
         <th class="border">payment type</th>
@@ -90,12 +90,12 @@
     </tr>
     <c:forEach var="ReceivedPayment" items="${ReceivedPayment}">
     <tr>
-<!-- <td>${ReceivedPayment.id}</td> -->
-<!--<td>${ReceivedPayment.user_id}</td>  --> 
+ <td>${ReceivedPayment.id}</td>
+ <td>${ReceivedPayment.user_id}</td>
 
 <td>${ReceivedPayment.person_firstName}</td>
 <td>${ReceivedPayment.person_lastName}</td>
-<!--  <td>${ReceivedPayment.person_id}</td>-->
+<td>${ReceivedPayment.person_id}</td>
 <td>${ReceivedPayment.received_payment}</td>
 <td>${ReceivedPayment.eventType}</td>
 <td>${ReceivedPayment.payment_type}</td>
@@ -108,6 +108,10 @@
 </table> 
 </div>
 
-
+<script type="text/javascript">
+</script>
+<form>
+<input type="button" value="Print" onclick="window.print()" />
+</form>
 </body>
 </html>

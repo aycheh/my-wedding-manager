@@ -1,4 +1,6 @@
 
+<%@page import="sun.util.resources.CalendarData"%>
+<%@page import="java.util.Calendar"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page session = "false" %>
 
@@ -10,6 +12,9 @@
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script> 
 
 <title>Wedding manager</title>
+<p>
+   Today's date: <%= (new java.util.Date()).toLocaleString()%>
+</p>
 <link href="/style.css" rel="stylesheet" type="text/css">
 
 
@@ -63,4 +68,6 @@ font-weight: bold:
 <button onclick="location.href='index.jsp'"> Home</button>
 
 </body>
+
+
 </html>

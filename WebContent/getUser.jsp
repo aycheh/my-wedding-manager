@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <h3>${Msg}</h3>
+<h3>${userpadated_Msg}</h3>
 <!--h1 align="Right">  ${שםמשתש} ${welcaomeMsg}  </h1-->
 
 <div align="Right"> 
@@ -46,8 +47,8 @@
      	<th><input class="white_button" name="commit" type="submit" value=" CreatePersonAndCreateReceivedPayment" /></th>
      	</form>
      	
-     	<form action="updateReceivedPayment.jsp" method="get">
-     	<th><input class="white_button" name="commit" type="submit" value=" updateReceivedPayment" /></th>
+     	<form action="Update_Person_And_ReceivedPayment.jsp" method="get">
+     	<th><input class="white_button" name="commit" type="submit" value=" Update Person And ReceivedPayment" /></th>
      	</form>
      	
      	

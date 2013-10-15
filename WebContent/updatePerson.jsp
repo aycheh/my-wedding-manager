@@ -46,8 +46,8 @@
      	<th><input class="white_button" name="commit" type="submit" value=" CreatePersonAndCreateReceivedPayment" /></th>
      	</form>
      	
-     	<form action="updateReceivedPayment.jsp" method="get">
-     	<th><input class="white_button" name="commit" type="submit" value=" updateReceivedPayment" /></th>
+     	<form action="Update_Person_And_ReceivedPayment.jsp" method="get">
+     	<th><input class="white_button" name="commit" type="submit" value=" Update Person And ReceivedPayment" /></th>
      	</form>
      	
      	

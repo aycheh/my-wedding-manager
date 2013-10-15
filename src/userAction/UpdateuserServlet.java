@@ -34,9 +34,8 @@ public class UpdateuserServlet extends HttpServlet {
     public static final String ERROR_MWSSAGE = "errorMessage";
     public static final String USER_PARAM = "user";
     public static final String USER_NAME_PARAM = "userName";
-    public static final String MSG_PARAM ="Msg";
     public static final String USER_EMAIL_PARAM = "email";
-    
+    public static final String USER_UPDATED_MAS_PARAM = "userpadated_Msg";
 
     public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException , IOException{
     	HttpSession session = request.getSession(false);    	
@@ -69,13 +68,12 @@ public class UpdateuserServlet extends HttpServlet {
 
     	session.setAttribute(USER_PARAM,user);
     	session.setAttribute(USER_NAME_PARAM ,user.getFirstName());
-    	session.setAttribute(MSG_PARAM ,"your details are updated successfully");
+    	session.setAttribute(USER_UPDATED_MAS_PARAM ,"פרטך עודכנו בהצלחה");
     	session.setAttribute(USER_EMAIL_PARAM,user.getEmail());
-    	
-    	this.getServletConfig().getServletContext().getRequestDispatcher("/Dashboard.jsp").forward(request, response);
+    	this.getServletConfig().getServletContext().getRequestDispatcher("/getUser.jsp").forward(request, response);
     	return;
     	
-    	}else {
+    	}else {                                                              
     		request.setAttribute(ERROR_MWSSAGE, "you must login first, try again");
     		this.getServletConfig().getServletContext().getRequestDispatcher("/LogIng.jsp").forward(request, response);
         	return;	

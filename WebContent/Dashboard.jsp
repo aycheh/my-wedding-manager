@@ -15,7 +15,9 @@ font-weight: bold:
 
 
 <h1> ${welcaomeMsg} ${userName}</h1>
+<h3>${Creating_person_and_expenses_succeeded}</h3>
 <h3>${Msg}</h3>
+
 <!--h1 align="Right">  ${שםמשתש} ${welcaomeMsg}  </h1-->
 
 <div align="Right"> 
@@ -61,14 +63,18 @@ font-weight: bold:
      	<th><input class="white_button" name="commit" type="submit" value=" CreatePersonAndCreateReceivedPayment" /></th>
      	</form>
      	
-     	<form action="updateReceivedPayment.jsp" method="get">
-     	<th><input class="white_button" name="commit" type="submit" value=" updateReceivedPayment" /></th>
+     	<form action="Get_Expenses_and_forward_to_exp_update_page" method="get">
+     	<th><input class="white_button" name="commit" type="submit" value=" Update Person And ReceivedPayment" /></th>
      	</form>
      	
-     	
-     	
      	<form action="GetAllReceivedPayment" method="get">
-     	<th><input class="white_button" name="commit" type="submit" value=" getAllReceivedPayment" /></th>
+     	<th><input class="white_button" name="commit" type="submit" value=" get All ReceivedPayment" /></th>
+     </form>
+     
+     	
+     	
+     	<form action="-------" method="get">
+     	<th><input class="white_button" name="commit" type="submit" value="-----" /></th>
      </form>
      
      <form action="---------" method="get">

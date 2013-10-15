@@ -3,13 +3,26 @@
 <!DOCTYPE html>
 
 <html>
+
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="/style.css" rel="stylesheet" type="text/css">
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script> 
 
 <title>Wedding manager</title>
+<table>
 <h2 align="center">Welcome To Wedding Manager</h2><br>
+<%! int fontSize; %> 
+<%for ( fontSize = 1; fontSize <= 2; fontSize++){ %>
+   <font color="green" size="<%= fontSize %>">
+    Welcome To Wedding Manager
+   </font><br />
+<%}%>
+</table>
+<p>
+   Today's date: <%= (new java.util.Date()).toLocaleString()%>
+</p>
 
 
 <div align="Right"> 
@@ -54,14 +67,26 @@
 		<li>Guests gave you money? Arrange it as incoming(money).</li>
 		</ol>
 
-       <p>Thank you for using this program.</p> 
+       <p>Thank you for using this program.</p>
+       Hello World!<br/>
+       
+       
+<%
+out.println("Your IP address is " + request.getRemoteAddr());
+%> 
+
+
+
+
 </p></td>
 <td><img src="images/wedding_flowers_background.jpg" name="home_img" border="0" id="home_img" style="height: 367px; width: 500px; "/></td>
 </tr>
 </table>
 
 <button onclick="location.href='Sign_up.jsp'"> Signup	</button>
-</div>
+</div> 
+</html>
+
+
 
 </body>
-</html>

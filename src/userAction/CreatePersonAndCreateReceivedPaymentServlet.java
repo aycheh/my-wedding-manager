@@ -22,6 +22,7 @@ import system.UserAction;
  * Servlet implementation class CreatePersonAndCreateReceivedPaymentServlet
  */
 @WebServlet("/CreatePersonAndCreateReceivedPayment")
+
 public class CreatePersonAndCreateReceivedPaymentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	MyWeddingManager mw = MyWeddingManager.getInstance();

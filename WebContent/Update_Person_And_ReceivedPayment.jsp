@@ -188,7 +188,7 @@
 				<input name="submit" id="submit" type="submit" value=" submit"/>				
 			</td>
 		</tr>
-
+</div>	
 
 		<form action=Dashboard.jsp method="get">
 		<table>
@@ -198,7 +198,7 @@
 			</td>
 		</tr>
 		</table>
-</div>	
+
 	</form>
 </body>
 </html>

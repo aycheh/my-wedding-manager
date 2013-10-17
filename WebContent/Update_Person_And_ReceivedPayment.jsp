@@ -1,12 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <h3>${UPDATE_EXPENSES_PARAM_MSG}</h3>
 <!--h1 align="Right">  ${שםמשתש} ${welcaomeMsg}  </h1-->
+
+<script>
+function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+}
+</script>
 
 <div align="Right"> 
 	         <form action="Logout" method="get">
@@ -189,16 +201,15 @@
 			</td>
 		</tr>
 </div>	
-
+</table>
 		<form action=Dashboard.jsp method="get">
 		<table>
 		<tr>
-			<td colspan=2>
-				<input type="submit" name="submitted" value="cancel">				
+			<td colspan=2>			
+				<button onclick="location.href='Dashboard.jsp'"> cancel</button>
+				<div class="errMsg">${errorMessage}</div>				
 			</td>
-		</tr>
-		</table>
-
+		</tr>		
 	</form>
 </body>
 </html>

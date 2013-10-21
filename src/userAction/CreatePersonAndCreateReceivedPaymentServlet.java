@@ -123,7 +123,9 @@ public class CreatePersonAndCreateReceivedPaymentServlet extends HttpServlet {
     	 
      	UserAction uac = new UserAction(ur);
      	ur = uac.getUser(ur.getEmail());
-     	//System.out.println("User ur = new User =====333333=========" +ur);
+     	ur = new User(ur.getId(), ur.getFirstName(), ur.getLastName(), ur.getPassword(), ur.getEmail());
+     	
+     	System.out.println("User ur = new User =====333333=========" +ur);
     	
     	Person pr = new Person(0, personFirstName, personLastName, relationship, pesronAddress, personPhone, personEmail, pesronComment, ur.getId());
     	System.out.println("firts name )))))))))))))))))) -- " +  pr.getFirstName());
@@ -133,6 +135,7 @@ public class CreatePersonAndCreateReceivedPaymentServlet extends HttpServlet {
     	TotalExpenses toxp = new TotalExpenses(ur.getId());
     	try {
 			uac.CreatePersonAndCreateReceivedPayment(exp, pr, toxp);
+			//uac.CreatePersonsByFLRUId(pr);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Creating person and expenses filed , pleas tray a gain");

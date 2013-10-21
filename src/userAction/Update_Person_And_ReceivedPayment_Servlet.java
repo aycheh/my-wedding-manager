@@ -70,13 +70,7 @@ public class Update_Person_And_ReceivedPayment_Servlet extends HttpServlet {
     public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException , IOException{
     	HttpSession session = request.getSession(false);
 System.out.println("qwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww");
-    	/**user params**/
-//    	String FirstName = (String)request.getParameter(FIRST_NAME_PARAM);
-//    	String LastName = (String)request.getParameter(LAST_NAME_PARAM);
-//    	String password = (String)request.getParameter(USER_PASSWORD_PARAM);
-//    	String Re_enterPassword = (String)request.getParameter(RE_ENTER_PASSWORD_PARAM);
-//    	String email = (String)request.getParameter(USER_EMAIL_PARAM);
-    	//----------------------------------------------------------------------
+
     	/**person params**/
     	String personFirstName = (String)request.getParameter(PERSON_NAME_PARAM);
 System.out.println("PERSON_NAME_PARAM ggggggggggggggggggggggg>>>    :" + personFirstName);
@@ -126,13 +120,14 @@ System.out.println("PERSON_NAME_PARAM ggggggggggggggggggggggg>>>    :" + personF
      	UserAction uac = new UserAction(ur);
      	ur = uac.getUser(ur.getEmail());
      	Person p1 = new Person(person_id);
-     	
-     	//System.out.println("User ur = new User =====333333=========" +ur);
+     	p1 = uac.getPerson(p1.getId());
+System.out.println("persoooooooooooooonnnnnn ,,,,,,,,,,,,,,,,,,,,,:" +p1);
+    
      	
     	// TODO get sum how the person id 
      	
-     	Person p2 = new Person(p1.getId(), p1.getFirstName(), p1.getLastName(), p1.getRelationship(), p1.getAddress(), p1.getPhone(), p1.getEmail(), p1.getComment(), ur.getId());
-		Person p = new Person(p2.getId(),personFirstName,
+     	//Person p2 = new Person(p1.getId(), p1.getFirstName(), p1.getLastName(), p1.getRelationship(), p1.getAddress(), p1.getPhone(), p1.getEmail(), p1.getComment(), ur.getId());
+		Person p = new Person(p1.getId(),personFirstName,
 				personLastName,relationship,pesronAddress,personPhone,personEmail,pesronComment,ur.getId());
 System.out.println("USER_ID = " + ur.getId());
 		
@@ -145,24 +140,15 @@ System.out.println("USER_ID = " + ur.getId());
      			payment_type, eventType, payback_payment_eventType, eventAddress, payeComment, sqlDate);
 System.out.println("exp >>>>>>>>>>>>>>>>>" + exp);
     	
- 
-    	/***
-    	 *  long ts = System.currentTimeMillis();
-			java.sql.Date sqlDate = new Date(ts);
-	
-    	 * ***/
-    	
     	try {
 			
     		uac.updateReceivedPayment(exp, p);
-    		///uac.updatePerson(p);
     		System.out.println("The new updated Exp & pr Are :  ///////" + exp + "++++++  " +p);
     		/**this mathos must have total_expenses (toxp) in order to update the expenses**/
     		
     		// TODO update TotalExpenses (- xxx = ?)
     		//TotalExpenses toxp = new TotalExpenses(ur.getId());
-    		
-    		
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Updating person and expenses filed , pleas tray a gain");

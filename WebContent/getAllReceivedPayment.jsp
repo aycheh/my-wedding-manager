@@ -71,7 +71,7 @@
 <div>
 <table border="1">
     <tr>
-        <th colspan="12" style="background-color:#7c2f97;">Expenses</th>
+        <th colspan="15" style="background-color:#7c2f97;">Expenses</th>
     </tr>
     <tr style="background-color:#f0a64e;">
     	 <th class="border">id</th>
@@ -86,6 +86,8 @@
         <th class="border">payback payment eventType</th>
         <th class="border">payback payment event Address</th>
         <th class="border">payback payment date</th>
+         <th class="border">comment</th>
+        comment
         
     </tr>
     <c:forEach var="ReceivedPayment" items="${ReceivedPayment}">
@@ -103,6 +105,7 @@
 <td>${ReceivedPayment.payback_payment_eventType}</td>
 <td>${ReceivedPayment.eventAddress}</td>
 <td>${ReceivedPayment.date}</td>
+<td>${ReceivedPayment.comment}</td>
 </tr>
  </c:forEach>
 </table> 

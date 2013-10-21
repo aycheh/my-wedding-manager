@@ -74,7 +74,7 @@ font-weight: bold:
      	
      	
      	<form action="-------" method="get">
-     	<th><input class="white_button" name="commit" type="submit" value="-----" /></th>
+     	<th><input class="white_button" name="commit" type="submit" value="Get all persons" /></th>
      </form>
      
      <form action="---------" method="get">

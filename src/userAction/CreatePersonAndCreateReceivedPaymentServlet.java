@@ -35,10 +35,6 @@ public class CreatePersonAndCreateReceivedPaymentServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
     /**user params**/
-//  public static final String FIRST_NAME_PARAM = "FirstName";
-//	public static final String LAST_NAME_PARAM = "LastName";
-//	public static final String USER_PASSWORD_PARAM = "password";
-//	public static final String RE_ENTER_PASSWORD_PARAM ="Re_enterPassword";
     public static final String USER_EMAIL_PARAM = "email";
     //------------------------------------------------------
     public static final String ERROR_MWSSAGE = "errorMessage";
@@ -64,20 +60,15 @@ public class CreatePersonAndCreateReceivedPaymentServlet extends HttpServlet {
     public static final String  EVENT_ADDRESS_PARAM  ="eventAddress";
     public static final String  PAYE_COMMENT_PARAM = "payeComment";
     public static final String  DATE_PARAM ="date";
+    //public static final String   EXPENSES_ID_PARAM = "expenses_id";
    
     
     
     
     public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException , IOException{
     	HttpSession session = request.getSession(false);
-    	System.out.println("qwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww");
-    	/**user params**/
-//    	String FirstName = (String)request.getParameter(FIRST_NAME_PARAM);
-//    	String LastName = (String)request.getParameter(LAST_NAME_PARAM);
-//    	String password = (String)request.getParameter(USER_PASSWORD_PARAM);
-//    	String Re_enterPassword = (String)request.getParameter(RE_ENTER_PASSWORD_PARAM);
-//    	String email = (String)request.getParameter(USER_EMAIL_PARAM);
-    	//----------------------------------------------------------------------
+    	
+ 
     	/**person params**/
     	String personFirstName = (String)request.getParameter(PERSON_NAME_PARAM);
     	System.out.println("PERSON_NAME_PARAM ggggggggggggggggggggggg>>>    :" + personFirstName);
@@ -85,10 +76,10 @@ public class CreatePersonAndCreateReceivedPaymentServlet extends HttpServlet {
     	String relationship = (String)request.getParameter(PERSON_RELATIONSHIP_PARAM);
     	String pesronAddress = (String)request.getParameter(PERSON_ADDRESS_PARAM);
     	String personPhone = (String)request.getParameter(PERSON_PHONE_PARAM);
-    	String personEmail = (String)request.getParameter(PERSON_ADDRESS_PARAM);
+    	String personEmail = (String)request.getParameter(PERSON_EMAIL_PARAM);
     	String pesronComment = (String)request.getParameter(PERSON_COMMENT_PARAM);
     	
-    	//------------------------------------------------------------------------------
+ 
     	/**Expenses params**/	
     	Double received_payment = (Double)Double.parseDouble((String)request.getParameter(RECEVED_PAYMENT_PARAM));
     	Double payback_payment = (Double)Double.parseDouble((String)request.getParameter(PAYBACK_PARAM)); 
@@ -97,13 +88,7 @@ public class CreatePersonAndCreateReceivedPaymentServlet extends HttpServlet {
     	String payback_payment_eventType = (String)request.getParameter(PABACK_PAYMENT_EVENT_PARAM);
     	String eventAddress = (String)request.getParameter(EVENT_ADDRESS_PARAM);
     	String  payeComment = (String)request.getParameter(PAYE_COMMENT_PARAM);
-    	
-    	//String  date = (String)request.getParameter(DATE_PARAM);
-    	//1.
-    	//String dateString = "2001/03/09";
-    	//String dateString = (String)request.getParameter(DATE_PARAM);
-    	//SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/mm/dd");
-    	//Date convertedDate = (Date) dateFormat.parse(dateString); 
+ 
 
     	
     	if ((session.getAttribute(USER_EMAIL_PARAM)) == null ){
@@ -122,14 +107,9 @@ public class CreatePersonAndCreateReceivedPaymentServlet extends HttpServlet {
     	 User ur = new User((String)(session.getAttribute(USER_EMAIL_PARAM)));
     	 
      	UserAction uac = new UserAction(ur);
-     	ur = uac.getUser(ur.getEmail());
-     	ur = new User(ur.getId(), ur.getFirstName(), ur.getLastName(), ur.getPassword(), ur.getEmail());
-     	
-     	System.out.println("User ur = new User =====333333=========" +ur);
-    	
+     	ur = uac.getUser(ur.getEmail());	
     	Person pr = new Person(0, personFirstName, personLastName, relationship, pesronAddress, personPhone, personEmail, pesronComment, ur.getId());
-    	System.out.println("firts name )))))))))))))))))) -- " +  pr.getFirstName());
-    	Expenses exp = new Expenses(0, ur.getId(),  pr.getFirstName(),pr.getLastName(), pr.getId(), received_payment, payback_payment, payment_type, eventType, payback_payment_eventType, eventAddress, payeComment, sqlDate);
+    	Expenses exp = new Expenses(0, pr.getUser_id(),  pr.getFirstName(),pr.getLastName(), pr.getId(), received_payment, payback_payment, payment_type, eventType, payback_payment_eventType, eventAddress, payeComment, sqlDate);
     	System.out.println("exp >>>>>>>>>>>>>>>>>" + exp);
  
     	TotalExpenses toxp = new TotalExpenses(ur.getId());

@@ -136,14 +136,16 @@ System.out.println("USER_ID = " + ur.getId());
 		Expenses exp2 = new Expenses(exp1.getId(), ur.getId(), p.getFirstName(), p.getLastName(), p.getId(), exp1.getReceived_payment(),
 				exp1.getPayback_payment(), payment_type, eventType, payback_payment_eventType, eventAddress, payeComment, sqlDate);
      	
-		Expenses exp = new Expenses(exp2.getId(), ur.getId(),  p.getFirstName(),p.getLastName(), p.getId(), received_payment, payback_payment, 
+		Expenses exp = new Expenses(exp2.getId(), exp2.getUser_id(),  p.getFirstName(),p.getLastName(), p.getId(), received_payment, payback_payment, 
      			payment_type, eventType, payback_payment_eventType, eventAddress, payeComment, sqlDate);
 System.out.println("exp >>>>>>>>>>>>>>>>>" + exp);
     	
     	try {
 			
     		uac.updateReceivedPayment(exp, p);
-    		System.out.println("The new updated Exp & pr Are :  ///////" + exp + "++++++  " +p);
+    		// TDOD - should to run this method also , but before that fix the user_id problem.
+    		uac.updatePerson(p);
+
     		/**this mathos must have total_expenses (toxp) in order to update the expenses**/
     		
     		// TODO update TotalExpenses (- xxx = ?)

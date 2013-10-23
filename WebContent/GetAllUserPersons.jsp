@@ -1,23 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-
-<style>
-.errMsg{
-color:#FF0000;
-font-weight: bold:
-}
-</style>
-
-
-<h1> ${welcaomeMsg} ${userName}</h1>
-<h3>${Creating_person_and_expenses_succeeded}</h3>
 <h3>${Msg}</h3>
-
+<h3>${personParamMsg}</h3>
 <!--h1 align="Right">  ${שםמשתש} ${welcaomeMsg}  </h1-->
 
 <div align="Right"> 
@@ -29,12 +18,8 @@ font-weight: bold:
                   </div>
              </form>
 </div>
-  
-<title>Dashboard</title>
-
-
+<title>Get All user Persons</title>
 </head>
-
 <body background="images/bg1.jpg">
 
 <div>
@@ -63,30 +48,67 @@ font-weight: bold:
      	<th><input class="white_button" name="commit" type="submit" value=" CreatePersonAndCreateReceivedPayment" /></th>
      	</form>
      	
-     	<form action="Get_Expenses_and_forward_to_exp_update_page" method="get">
+     	<form action="Update_Person_And_ReceivedPayment.jsp" method="get">
      	<th><input class="white_button" name="commit" type="submit" value=" Update Person And ReceivedPayment" /></th>
      	</form>
      	
+     	
+     	
      	<form action="GetAllReceivedPayment" method="get">
-     	<th><input class="white_button" name="commit" type="submit" value=" get All ReceivedPayment" /></th>
+     	<th><input class="white_button" name="commit" type="submit" value=" getAllReceivedPayment" /></th>
      </form>
      
-     	
-     	
-     	<form action="GetAllUserPersons" method="get">
+     <form action="Dashboard.jsp" method="get">
+     	<th><input class="white_button" name="commit" type="submit" value=" Dashboard" /></th>
+     </form>
+     <	<form action="GetAllUserPersons" method="get">
      	<th><input class="white_button" name="commit" type="submit" value="Get all persons" /></th>
      </form>
-     
-     <form action="---------" method="get">
-     	<th><input class="white_button" name="commit" type="submit" value=" --------" /></th>
-     </form>
-     <form action="----------" method="get">
-     	<th><input class="white_button" name="commit" type="submit" value=" -------" /></th>
-     	</form>
      </tr>     
  </table>
+</div>
 
+<div>
+<table border="1">
+    <tr>
+        <th colspan="15" style="background-color:#7c2f97;">person</th>
+    </tr>
+    <tr style="background-color:#f0a64e;">
+    	 <th class="border">person id</th>
+         <th class="border">user id</th>
+        <th class="border">Person Name</th>
+        <th class="border">Person Last Name</th>
+        <th class="border">relationship</th>
+        <th class="border">address</th>
+        <th class="border">payment type</th>
+        <th class="border">phone</th>
+        <th class="border">email</th>
+         <th class="border">comment</th>
+    
+        
+    </tr>
+    <c:forEach var="person" items="${person}">
+    <tr>
+<td>${person.id}</td>
+<td>${person.user_id}</td>
+<td>${person.firstName}</td>
+<td>${person.lastName}</td>
+<td>${person.relationship}</td>
+<td>${person.address}</td>
+<td>${person.phone}</td>
+<td>${person.email}</td>
+<td>${person.comment}</td>
+
+</tr>
+ </c:forEach>
+</table>
 </div>
 
 </body>
 </html>
+
+
+
+
+
+

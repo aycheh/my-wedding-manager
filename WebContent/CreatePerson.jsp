@@ -56,6 +56,9 @@
      	<form action="getAllReceivedPayment.jsp" method="get">
      	<th><input class="white_button" name="commit" type="submit" value=" getAllReceivedPayment" /></th>
      </form>
+     	<form action="GetAllUserPersons" method="get">
+     	<th><input class="white_button" name="commit" type="submit" value="Get all persons" /></th>
+     </form>
      
      <form action="Dashboard.jsp" method="get">
      	<th><input class="white_button" name="commit" type="submit" value=" Dashboard" /></th>

@@ -76,9 +76,9 @@ font-weight: bold:
      <form action="Dashboard.jsp" method="get">
      	<th><input class="white_button" name="commit" type="submit" value=" Dashboard" /></th>
      </form>
-     <form action="----------" method="get">
-     	<th><input class="white_button" name="commit" type="submit" value=" -------" /></th>
-     	</form>
+     	<form action="GetAllUserPersons" method="get">
+     	<th><input class="white_button" name="commit" type="submit" value="Get all persons" /></th>
+     </form>
      </tr>     
  </table>
 </div>

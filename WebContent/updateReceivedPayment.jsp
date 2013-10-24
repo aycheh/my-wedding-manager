@@ -29,8 +29,8 @@
      	<th><input class="white_button" name="commit" type="submit" value="getUser" /></th>
      	</form>
      	
-     	 <form action="Updateuser.jsp" method="get">    	
-     	<th><input class="white_button" name="commit" type="submit" value=" Updateuser" /> </th>
+     	 <form action="GetAllPersons_and_RedirectToUpdatePersonJSP" method="get">
+     	<th><input class="white_button" name="commit" type="submit" value=" Update Person" /></th>
      	</form>
  
      	

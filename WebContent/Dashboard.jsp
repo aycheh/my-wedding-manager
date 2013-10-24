@@ -55,8 +55,8 @@ font-weight: bold:
      	<th><input class="white_button" name="commit" type="submit" value=" CreatePerson" /></th>
      	</form>
      	
-     	<form action="updatePerson.jsp" method="get">
-     	<th><input class="white_button" name="commit" type="submit" value=" updatePerson" /></th>
+     	<form action="GetAllPersons_and_RedirectToUpdatePersonJSP" method="get">
+     	<th><input class="white_button" name="commit" type="submit" value=" Update Person" /></th>
      	</form>
      	
      	<form action="CreatePersonAndCreateReceivedPayment.jsp" method="get">

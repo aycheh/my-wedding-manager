@@ -37,6 +37,8 @@ public class GetAllPersons_and_RedirectToUpdatePersonJSPServlet extends HttpServ
     public static final String USER_EMAIL_PARAM = "email";
     public static final String PERSON_PARAM = "person";
     public static final String PERSON_MSG_PARAM = "personParamMsg";
+    public static final String  PERSON_ERR_PARAM = "personERR";
+    public static final String  UPDATE_PERSON_MSG ="update_person_MSG";
     
     
   
@@ -76,6 +78,8 @@ public class GetAllPersons_and_RedirectToUpdatePersonJSPServlet extends HttpServ
     	
     	session.setAttribute(PERSON_MSG_PARAM ,"Your Persons List");
     	session.setAttribute(PERSON_PARAM,Persons);
+    	session.setAttribute(PERSON_ERR_PARAM,"         ");
+    	session.setAttribute(UPDATE_PERSON_MSG,"        ");
     	//session.setAttribute(ERROR_MWSSAGE ,"Geting All Persons Filed, Tray again");
 	
     	this.getServletConfig().getServletContext().getRequestDispatcher("/updatePerson.jsp").forward(request, response);

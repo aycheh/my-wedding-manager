@@ -37,6 +37,7 @@ public class UpdatePersonServlet extends HttpServlet {
     
     //--------------------------------------------------------------------
     /**person params**/
+    public static final String  PERSON_ERR_PARAM = "personERR";
     public static final String  UPDATE_PERSON_MSG ="update_person_MSG";
     public static final String  PERSON_NAME_PARAM = "personName";
     public static final String  PERSON_LAST_NAME_PARAM = "personLastName";
@@ -54,10 +55,10 @@ public class UpdatePersonServlet extends HttpServlet {
     
     public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException , IOException{
     	HttpSession session = request.getSession(false);
-
-
-
-
+    	String personErr = (String)request.getParameter(PERSON_ERR_PARAM);
+    	//request.setAttribute(PERSON_ERR_PARAM, "");
+    	
+    	
     	/**person params**/
     	String personFirstName = (String)request.getParameter(PERSON_NAME_PARAM);
 System.out.println("PERSON_NAME_PARAM ggggggggggggggggggggggg>>>    :" + personFirstName);
@@ -94,30 +95,28 @@ System.out.println("PERSON_NAME_PARAM ggggggggggggggggggggggg>>>    :" + personF
 
 		Person persontoupdate = new Person(person_id1,personFirstName,
 				personLastName,relationship,pesronAddress,personPhone,personEmail,pesronComment,ur.getId());
-
 		System.out.println("persontoupdate = " + persontoupdate);
-    	try {
-
-    		if(persontoupdate != null){
-    		uac.updatePerson(persontoupdate);
-    		}
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			System.out.println("No Person found" + e.getMessage());
-			System.out.println("the message is : " + e.getMessage());
-			session.setAttribute(ERROR_MWSSAGE, "person dose not exist , pleas tray a gain");
-			this.getServletConfig().getServletContext().getRequestDispatcher("/updatePerson.jsp").forward(request, response);
-	    	return;
-		}
+		
+		
     	
 
-   
-    	session.setAttribute(USER_NAME_PARAM ,ur.getFirstName());
-    	session.setAttribute(UPDATE_PERSON_MSG, "Updating person  succeeded");
+    		if(uac.getPerson(persontoupdate.getId()) != null){
+    		
+    			uac.updatePerson(persontoupdate);
+    			request.setAttribute(PERSON_ERR_PARAM, "          ");
+    	    	session.setAttribute(USER_NAME_PARAM ,ur.getFirstName());
+    	    	session.setAttribute(UPDATE_PERSON_MSG, "Updating person  succeeded");
 
-    	this.getServletConfig().getServletContext().getRequestDispatcher("/updatePerson.jsp").forward(request, response);
-    	return;
+    	    	this.getServletConfig().getServletContext().getRequestDispatcher("/updatePerson.jsp").forward(request, response);
+    	    	return;
+    		}
+		
+    		session.setAttribute(UPDATE_PERSON_MSG, "             ");
+			session.setAttribute(PERSON_ERR_PARAM, "person dose not exist , pleas tray a gain");
+			this.getServletConfig().getServletContext().getRequestDispatcher("/updatePerson.jsp").forward(request, response);
+	    	return;
+		
+    	
     	
     	}else {
 

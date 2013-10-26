@@ -80,7 +80,6 @@
         <th class="border">Person Last Name</th>
         <th class="border">relationship</th>
         <th class="border">address</th>
-        <th class="border">payment type</th>
         <th class="border">phone</th>
         <th class="border">email</th>
          <th class="border">comment</th>

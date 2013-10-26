@@ -6,15 +6,47 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+<style>
+.personERR{
+color:#FF0000;
+font-weight: bold:
+
+}
+#login_table{
+	border-spacing:20px;
+	border:1px outset blue;
+	border-radius:10px;
+	box-shadow:2px 2px 4px darkgray;
+}
+</style>
+
+<style>
+.update_person_MSG{
+color:#FF00FF;
+font-weight: bold:
+
+}
+#login_table{
+	border-spacing:20px;
+	border:1px outset blue;
+	border-radius:10px;
+	box-shadow:2px 2px 4px darkgray;
+}
+</style>
+
+
 <h3>${Msg}</h3>
-<h4>${update_person_MSG}</>
+
+<div class="personERR">${personERR}</div>
+<div class="update_person_MSG">${update_person_MSG}</div>
 <!--h1 align="Right">  ${שםמשתש} ${welcaomeMsg}  </h1-->
 
 <div align="Right"> 
 	         <form action="Logout" method="get">
      			  <p style="clear:both">
                   <input class="white_button" name="commit" type="submit" value="Logout" />             
-                  <div class="errMsg">${errorMessage}
+                 
                   
                   </div>
              </form>
@@ -70,7 +102,7 @@
  </table>
 </div>
  <!-- ====================================================================================== -->
-person_id
+
  <div>
 <table>
 <form action="UpdatePerson" method="get" onsubmit="return validateLogin()">
@@ -127,7 +159,7 @@ person_id
 		<tr>
 			<td colspan=2>			
 				<button onclick="location.href='Dashboard.jsp'"> cancel</button>
-				<div class="errMsg">${errorMessage}</div>				
+							
 			</td>
 		</tr>		
 	</form>
@@ -144,7 +176,6 @@ person_id
         <th class="border">Person Last Name</th>
         <th class="border">relationship</th>
         <th class="border">address</th>
-        <th class="border">payment type</th>
         <th class="border">phone</th>
         <th class="border">email</th>
          <th class="border">comment</th>

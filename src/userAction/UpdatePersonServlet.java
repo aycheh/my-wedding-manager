@@ -89,23 +89,23 @@ System.out.println("PERSON_NAME_PARAM ggggggggggggggggggggggg>>>    :" + personF
      	UserAction uac = new UserAction(ur);
      	ur = uac.getUser(ur.getEmail());
      	
-     	Person persontoupdate = new Person(person_id1);
-     	persontoupdate = uac.getPerson(person_id1);
-		Person p = new Person(0,personFirstName,
+     	//Person persontoupdate = new Person(person_id1);
+     	System.out.println("person_id1  :"+person_id1);
+
+		Person persontoupdate = new Person(person_id1,personFirstName,
 				personLastName,relationship,pesronAddress,personPhone,personEmail,pesronComment,ur.getId());
 
-		System.out.println("USER_ID = " + ur.getId());
-
-		
-	
+		System.out.println("persontoupdate = " + persontoupdate);
     	try {
 
-    		if(persontoupdate.getId() == p.getId()){
-    		uac.updatePerson(p);
+    		if(persontoupdate != null){
+    		uac.updatePerson(persontoupdate);
     		}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			System.out.println("No Person found" + e.getMessage());
+			System.out.println("the message is : " + e.getMessage());
 			session.setAttribute(ERROR_MWSSAGE, "person dose not exist , pleas tray a gain");
 			this.getServletConfig().getServletContext().getRequestDispatcher("/updatePerson.jsp").forward(request, response);
 	    	return;

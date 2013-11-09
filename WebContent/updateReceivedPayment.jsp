@@ -18,7 +18,7 @@
 </div>
 <title>updateReceivedPayment</title>
 </head>
-<body background="images/bg1.jpg">
+<body background="images/bg4.jpg">
 
 <div>
 <table border="1">

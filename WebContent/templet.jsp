@@ -3,11 +3,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-  <title>Dashboard</title>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <title>Welcome to our site</title>
   <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>	
-
 <body>
 <h3>${Creating_person_and_expenses_succeeded}</h3>
 <h3>${Msg}</h3>
@@ -40,13 +40,49 @@
 <div class="mid-left">
 <div class="gap-1">
 <div>
-<!-- הכנס פה תמונה או משהו יפה  -->
-<img src="/my-wedding-manager/images/hilay.jpg" alt="some_text">
+<table border="0">
+    <tr>
+        <th colspan="7" style="background-color:#7c2f97;">Client Activitis</th>
+    </tr>
+    <tr style="background-color:#f0a64e;">
+        <th class="border">ID</th>
+        <th class="border">first Name</th>
+        <th class="border">last Name</th>
+        <th class="border">password </th>
+        <th class="border">email</th>
+        
+       
+     
+    </tr>
+    <c:forEach var="client_activity" items="${client_activity}">
+        <tr>
+            <td>${user.id}</td>
+            <td>${user.firstName}</td>
+            <td>${user.lastName}</td>
+            <td>${user.password}</td>
+            <td>${user.email}</td>
+                      
+        </tr>
+    </c:forEach>     
+</table>
 </div>
+<div class="bord-1">
+
+	<table border="0" cellspacing="0" cellpadding="1">
+    <tbody>
+   <tr>
+      <td><button onclick="location.href='LogIng.jsp'">
+     כניסה למערכת	</button> 
+     <button onclick="location.href='Sign_up.jsp'"> הרשם למערכת	</button>
+     </td>
+    </tr>
+    </tbody>
+</table>
+
 
 </div>
 </div>
-
+</div>
 <div class="mid-right">
 <div class="mid-right-top">
 <h2> MAIN MENU</h2>
@@ -84,19 +120,20 @@
   <li><a href="index.html#">Link goes here</a></li>
   <li><a href="index.html#">Link goes here</a></li>
   <li><a href="index.html#">Link goes here</a></li>
+
+
 </ul>
 </div>
 </div>
 </div>
-
 <div class="footer">
 <!--DO NOT Remove The Footer Links-->
 <!--Designed by--><a href="http://www.htmltemplates.net">
 <img src="images/footnote.gif" class="copyright" alt="html templates"></a>
 <!--In partnership with--><a href="http://websitetemplates.net">
 <img src="images/footnote.gif" class="copyright" alt="website templates"></a>
-<p class="copyright-text">&copy; Copyright 2013. Designed by <a class="footer-link"
- target="_blank" href="#">Asher</a></p>
+<p class="copyright-text">&copy; Copyright 2010. Designed by <a class="footer-link"
+ target="_blank" href="http://www.htmltemplates.net/">htmltemplates.net</a></p>
 <!--DO NOT Remove The Footer Links-->
 </div>
 </div>

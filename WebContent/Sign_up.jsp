@@ -6,23 +6,63 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="/style.css" rel="stylesheet" type="text/css">
+ <link href="css/style.css" rel="stylesheet" type="text/css">
+
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script> 
 
-<title>Sign up</title>
-<h2 align="center">Welcome To Wedding Manager</h2><br>
+<title>Wedding manager</title>
+<p>
+   Today's date: <%= (new java.util.Date()).toLocaleString()%>
+</p>
+<link href="/style.css" rel="stylesheet" type="text/css">
+
 
 <style>
 .errMsg{
 color:#FF0000;
 font-weight: bold:
+
+}
+#login_table{
+	border-spacing:20px;
+	border:1px outset blue;
+	border-radius:10px;
+	box-shadow:2px 2px 4px darkgray;
 }
 </style>
+
+
 </head>
 
+<body>
+<div class="main">
+<div class="page">
+<div class="page-in">
+<div class="header">
+<div class="topmenu">
+<ul>
+  <li
+ style="background: transparent none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">
+<a
+ href="#">Home</a></li>
+  <li><a href="#">About Us</a></li>
+  <li><a href="#">Services</a></li>
+  <li><a href="#">Links</a></li>
+  <li><a href="#">Contact US<br>
+    </a></li>
+</ul>
+</div>
+<div class="header-img">
+<h1>Wedding manager</h1>
+</div>
+</div>
+<div class="mid">
+<div class="mid-left">
+<div class="gap-1">
+<div>
 
 
-<body background="images/bg1.jpg">
+
 
 <form action="CreateUser" method="get" onsubmit="return validateLogin()">
 	<table id="CreateUser">

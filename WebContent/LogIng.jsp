@@ -9,6 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <link href="css/style.css" rel="stylesheet" type="text/css">
 
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script> 
 
@@ -36,10 +37,34 @@ font-weight: bold:
 
 </head>
 
-<body background="images/bg1.jpg">
-<h2 align="center">Welcome To Wedding Manager</h2><br>
-<img src="images/wedding_flowers_background.jpg" name="home_img" border="0" id="home_img" style="height: 156px; width: 367px; "/>
-<br/><br/>
+<body>
+<div class="main">
+<div class="page">
+<div class="page-in">
+<div class="header">
+<div class="topmenu">
+<ul>
+  <li
+ style="background: transparent none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">
+<a
+ href="#">Home</a></li>
+  <li><a href="#">About Us</a></li>
+  <li><a href="#">Services</a></li>
+  <li><a href="#">Links</a></li>
+  <li><a href="#">Contact US<br>
+    </a></li>
+</ul>
+</div>
+<div class="header-img">
+<h1>Wedding manager</h1>
+</div>
+</div>
+<div class="mid">
+<div class="mid-left">
+<div class="gap-1">
+<div>
+
+
 
 
 <form action="Login" method="get" onsubmit="return validateLogin()">

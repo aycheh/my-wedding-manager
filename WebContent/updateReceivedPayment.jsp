@@ -59,6 +59,9 @@
      <form action="Dashboard.jsp" method="get">
      	<th><input class="white_button" name="commit" type="submit" value=" Dashboard" /></th>
      </form>
+     <li><form action="SearchPerson.jsp" method="get">
+     	<th><input class="white_button" name="commit" type="submit" value="Search Persons" /></th>
+     </form></li>
      	<form action="GetAllUserPersons" method="get">
      	<th><input class="white_button" name="commit" type="submit" value="Get all persons" /></th>
      </form>

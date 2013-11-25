@@ -7,10 +7,23 @@
  content="text/html; charset=iso-8859-1">
   <title>Search Person</title>
   <link href="css/style.css" rel="stylesheet" type="text/css">
+  
+ <style>
+.errMsg{
+color:#FF0000;
+font-weight: bold:
+
+}
+#login_table{
+	border-spacing:20px;
+	border:1px outset blue;
+	border-radius:10px;
+	box-shadow:2px 2px 4px darkgray;
+}
+</style>
+
 </head>	
 <body>
-<h3>${Creating_person_and_expenses_succeeded}</h3>
-<h3>${Msg}</h3>
 
 <div class="main">
 <div class="page">
@@ -64,8 +77,6 @@
 			</td>
 		</tr>
 		<div class="errMsg">${errorMessage}</div>
-		<h4>${CREATING_PARAM_MSG}</>
-		<h3>${Creating_person_and_expenses_succeeded}</h3>
 	</table>
 </form>
 </div>

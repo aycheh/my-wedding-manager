@@ -3,21 +3,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<meta http-equiv="Content-Type"content="text/html; charset=iso-8859-1">
-  <link href="css/style.css" rel="stylesheet" type="text/css"> 
-  <title>Updateuser</title>
-
-
-      <div align="Right"> 
-	         <form action="Logout" method="get">
-     			  <p style="clear:both">
-                  <input class="white_button" name="commit" type="submit" value="Logout" />  
- 			</form>
- 			</div> 
-                                            
-<style>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <title>Search Person</title>
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  
+ <style>
 .errMsg{
 color:#FF0000;
 font-weight: bold:
@@ -31,11 +22,9 @@ font-weight: bold:
 }
 </style>
 
-
-</head>
+</head>	
 <body>
-<h3>${Creating_person_and_expenses_succeeded}</h3>
-<h3>${Msg}</h3>
+
 <div class="main">
 <div class="page">
 <div class="page-in">
@@ -65,51 +54,35 @@ font-weight: bold:
 <div class="mid-left">
 <div class="gap-1">
 <div>
-<!-- הכנס פה תמונה או משהו יפה  -->
-<form action="Updateuser" method="get" onsubmit="return validateLogin()">
-	<table id="Updateuser">
+<table>
+<form action="SearchPerson" method="get" onsubmit="return validateLogin()">
+	<table id="SearchPerson">
+
 		<tr>
-			<td colspan=2><h4>please fill your details </h4></td>
-		</tr>
-				<tr>
-			<td>Old_password:</td>
-			<td><input type="password" name="old_password" id="old_password" required/></td>
-		</tr>
-				
-		<tr>
-			<td>New password:</td>
-			<td><input type="password" name="password" id="password" required/></td>
-		</tr>
-		<tr>
-		<tr>
-			<td>Email:</td>
-			<td><input type="text" name="email2" id="email2" required/></td>
-		</tr>
-				
-		<tr>
-			<td colspan=2>
-				<input name="submit" id="submit" type="submit" value=" submit"/>				
-			</td>
+			<td colspan=2><h4>please fill the following details </h4></td>
 		</tr>
 		
-	</table>
-	
-</form>
-		<form action=Dashboard.jsp method="get">
-		<table>
+		
+		<tr>
+			<td>Person First Name:</td>
+			<td><input type="text" name="personName" id="personName" required/></td>
+		</tr>
+		<tr>
+			<td>Person LastName:</td>
+			<td><input type="text" name="personLastName" id="personLastName" required/></td>
+		</tr>
 		<tr>
 			<td colspan=2>
-				<input type="submit" name="submitted" value="cancel">				
+				<input name="submit" id="submit" type="submit" value=" search "/>				
 			</td>
 		</tr>
-		</table>
-	</form>
-	<div class="errMsg">${errorMessage}</div>
+		<div class="errMsg">${errorMessage}</div>
+	</table>
+</form>
 </div>
 
 </div>
 </div>
-
 <div class="mid-right">
 <div class="mid-right-top">
 <h2> MAIN MENU</h2>
@@ -144,17 +117,19 @@ font-weight: bold:
      <li><form action="SearchPerson.jsp" method="get">
      	<th><input class="white_button" name="commit" type="submit" value="Search Persons" /></th>
      </form></li>
+     
      <form action="Dashboard.jsp" method="get">
      	<th><input class="white_button" name="commit" type="submit" value=" Dashboard" /></th>
      </form>
   <li><a href="index.html#">Link goes here</a></li>
   <li><a href="index.html#">Link goes here</a></li>
   <li><a href="index.html#">Link goes here</a></li>
+
+
 </ul>
 </div>
 </div>
 </div>
-
 <div class="footer">
 <!--DO NOT Remove The Footer Links-->
 <!--Designed by--><a href="http://www.htmltemplates.net">
@@ -168,6 +143,5 @@ font-weight: bold:
 </div>
 </div>
 </div>
-
 </body>
 </html>

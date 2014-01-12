@@ -46,6 +46,32 @@
 <div>
 <!-- הכנס פה תמונה או משהו יפה  -->
 <div>
+
+<form action="SearchPerson" method="get" onsubmit="return validateLogin()">
+	<table id="SearchPerson">
+
+		<tr>
+			<td colspan=2><h4>please fill the following details </h4></td>
+		</tr>
+		
+		
+		<tr>
+			<td>Person First Name:</td>
+			<td><input type="text" name="personName" id="personName" required/></td>
+		</tr>
+		<tr>
+			<td>Person LastName:</td>
+			<td><input type="text" name="personLastName" id="personLastName" required/></td>
+		</tr>
+		<tr>
+			<td colspan=2>
+				<input name="submit" id="submit" type="submit" value=" search "/>				
+			</td>
+		</tr>
+		<div class="errMsg">${errorMessage}</div>
+	</table>
+</form>
+
 <table border="1">
     <tr>
         <th colspan="15" style="background-color:#7c2f97;">person</th>
@@ -114,6 +140,9 @@
      </form></li>
   <li><form action="GetAllUserPersons" method="get">
      	<th><input class="white_button" name="commit" type="submit" value="Get all persons" /></th>
+     </form></li>
+     <li><form action="SearchPerson.jsp" method="get">
+     	<th><input class="white_button" name="commit" type="submit" value="Search Persons" /></th>
      </form></li>
      <form action="Dashboard.jsp" method="get">
      	<th><input class="white_button" name="commit" type="submit" value=" Dashboard" /></th>

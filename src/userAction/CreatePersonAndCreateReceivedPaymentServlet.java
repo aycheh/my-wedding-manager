@@ -115,9 +115,7 @@ public class CreatePersonAndCreateReceivedPaymentServlet extends HttpServlet {
     	TotalExpenses toxp = new TotalExpenses(ur.getId());
     	try {
 			uac.CreatePersonAndCreateReceivedPayment(exp, pr, toxp);
-			//uac.CreatePersonsByFLRUId(pr);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			System.out.println("Creating person and expenses filed , pleas tray a gain");
 			e.printStackTrace();
 		}

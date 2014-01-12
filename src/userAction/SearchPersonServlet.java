@@ -46,6 +46,7 @@ public class SearchPersonServlet extends HttpServlet {
 
     	
     	if (session.getAttribute("user") == null){
+    		System.out.println("USER_PARAM USER_PARAM USER_PARAM -----"+"user");
  
         		request.setAttribute(ERROR_MWSSAGE, "Invalid email/password combination, try again");
         
@@ -73,8 +74,9 @@ public class SearchPersonServlet extends HttpServlet {
     	this.getServletConfig().getServletContext().getRequestDispatcher("/SearchPersonRsult.jsp").forward(request, response);
     	return;
     	
-
+    	
     }
-    
 
 }
+
+

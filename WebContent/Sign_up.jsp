@@ -64,7 +64,8 @@ font-weight: bold:
 
 
 
-<form action="CreateUser" method="get" onsubmit="return validateLogin()">
+
+<form method="post" action="CreateUser" enctype="multipart/form-data">
 	<table id="CreateUser">
 		<tr>
 			<td colspan=2><h4>please fill your details </h4></td>
@@ -91,6 +92,12 @@ font-weight: bold:
 			<td>Email:</td>
 			<td><input type="text" name="email" id="email" required/></td>
 		</tr>
+			
+		 <tr>
+                    <td>Portrait Photo: </td>
+                    <td><input type="file" name="photo" size="50"/></td>
+         </tr>
+              
 				
 		<tr>
 			<td colspan=2>

@@ -106,14 +106,7 @@ public class CreateUserServlet extends HttpServlet {
 	
     	this.getServletConfig().getServletContext().getRequestDispatcher("/Dashboard.jsp").forward(request, response);
     	return;
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
+
     }
 
 }

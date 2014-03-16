@@ -53,14 +53,14 @@ When planning a wedding, the bride, groom and their families must take many vari
 </div>
 <div class="bord-1">
 <h1>Using this program allow you:</h1>
-<p class="txt-1"> <strong>Asher Aycheh</strong> sit amet,
+<p class="txt-1"> <strong>List of features</strong> -- -- -- ,
 
       <ol>
 		<li>List of invited.</li>
 		<li>Accepted or declined invitation list.</li>
 		<li>Guests gave you money? Arrange it as incoming(money).</li>
 		</ol> 
-<p class="txt-1"> <strong>Asher Aycheh</strong> dolor sit amet,
+<p class="txt-1"> <strong>SignUp/Login</strong> 
 	<table border="0" cellspacing="0" cellpadding="1">
     <tbody>
    <tr>

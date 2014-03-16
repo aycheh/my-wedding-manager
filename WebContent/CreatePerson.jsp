@@ -80,7 +80,7 @@
 		<tr>
 			<td>Comment About a person:</td>
 			<td><input type="text" name="pesronComment" id="pesronComment" required/></td>
-		</tr>
+		</tr>  
 		<tr>
 			<td colspan=2>
 				<input name="submit" id="submit" type="submit" value=" submit"/>				

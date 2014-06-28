@@ -15,6 +15,7 @@
 <div class="page">
 <div class="page-in">
 <div class="header">
+<img src="UserImage" width="150" height="150" alt="User avatar">
 <div class="topmenu">
 <ul>
   <li
@@ -33,7 +34,9 @@
 </div>
 <div class="header-img">
 <h1>Wedding manager</h1>
-<h1> ${welcaomeMsg} ${userName}</h1>
+<h1> ${welcaomeMsg} ${userName} </h1>
+<h1></h1>
+
 </div>
 </div>
 <div class="mid">
@@ -42,6 +45,7 @@
 <div>
 <!-- הכנס פה תמונה או משהו יפה  -->
 <img src="/my-wedding-manager/images/hilay.jpg" alt="some_text">
+
 </div>
 
 </div>
@@ -91,7 +95,6 @@
 </div>
 </div>
 </div>
-
 <div class="footer">
 <!--DO NOT Remove The Footer Links-->
 <!--Designed by--><a href="http://www.htmltemplates.net">

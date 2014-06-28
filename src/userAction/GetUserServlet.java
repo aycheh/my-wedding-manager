@@ -25,6 +25,7 @@ public class GetUserServlet extends HttpServlet {
      */
     public GetUserServlet() {
         super();
+        System.out.println("GetUserServlet() -------------------------------------");
         // TODO Auto-generated constructor stub
     }
     

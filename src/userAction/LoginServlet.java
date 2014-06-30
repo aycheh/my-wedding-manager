@@ -42,6 +42,7 @@ public class LoginServlet extends HttpServlet {
     	String password = (String)request.getParameter(USER_PASSWORD_PARAM);
     	System.out.println( email  +   password );
     	
+    	
     	if ( password == null || password.trim().isEmpty() || email == null || email.trim().isEmpty() ||mw.login(email, password) == null ){
  
         		request.setAttribute(ERROR_MWSSAGE, "Invalid email/password combination, try again");

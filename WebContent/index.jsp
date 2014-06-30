@@ -106,5 +106,17 @@ When planning a wedding, the bride, groom and their families must take many vari
 </div>
 </div>
 </div>
+<!-- Kontera ContentLink -->
+<SCRIPT LANGUAGE="JavaScript">
+var dc_UnitID = 14;
+var dc_PublisherID = 8079;
+var dc_AdLinkColor = 'red';
+var dc_open_new_win = 'yes';
+var dc_isBoldActive= 'no';
+var dc_adprod='ADL';
+</SCRIPT>                  
+<SCRIPT LANGUAGE="JavaScript" SRC="http://kona.kontera.com/javascript/lib/KonaLibInline.js"></SCRIPT>
+<!-- Kontera ContentLink -->
+
 </body>
 </html>

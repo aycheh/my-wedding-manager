@@ -84,7 +84,8 @@ public class UserImageServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 
-		}
+			}
+
 	}
 
 	/**

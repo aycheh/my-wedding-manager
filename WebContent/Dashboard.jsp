@@ -15,7 +15,7 @@
 <div class="page">
 <div class="page-in">
 <div class="header">
-<img src="UserImage" width="150" height="150" alt="User avatar">
+<!-- img src="UserImage" width="150" height="150" alt="Add your avatar">  -->
 <div class="topmenu">
 <ul>
   <li
@@ -53,10 +53,11 @@
 
 <div class="mid-right">
 <div class="mid-right-top">
-<h2> MAIN MENU</h2>
+<h2><img src="UserImage" width="150" height="150" alt="Add your avatar"> </h2>
+<!-- <h2> MAIN MENU --</h2> -->
 <ul class="right-nav">
 
-  <li><a href="#">Link goes here<br>
+  <li><a href="#"></a>MAIN MENU<br>
     </a></li>
   <li><form action="GetUser" method="get">
      	<th><input class="white_button" name="commit" type="submit" value="getUser" /></th>
